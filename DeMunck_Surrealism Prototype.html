@@ -8,60 +8,150 @@
 
 <style>
     body {
-        background-color: black;
+        background-color: #111013;
         color: white;
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 20%;
+        padding-right: 20%;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
-    h1 {
+    /*NAVIGATION*/
+    #nav {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 2%;
+        padding: 5px;
+        background-color: white;
+        color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
     }
 
-    #intro {
-        display: flex;
+
+    .link {
+        padding: 10px;
+    }
+
+    .link:link,
+    .link:visited {
+        color: #969ABE;
+        text-decoration: none;
+    }
+
+    .link:hover {
+        background-color: lightgrey;
+        color: red;
+    }
+
+    /*INTRO*/
+    .intro {
+        outline-color: invert;
     }
 
     .summary {
-        margin: 1%;
+        font-size: 18px;
+        text-align: center;
     }
 
-    #gallery {
-        margin: 2%;
-        place-items: center;
-        display: grid;
-        grid-template-columns: 3fr 3fr 3fr 3fr;
-        grid-row-gap: 20px;
-        align-items: stretch;
+    h1 {
+        font-size: 35px;
+        text-align: center;
+    }
 
+    /*MAIN BODY*/
+
+    #article {
+        background-color: #2A2935;
+        padding: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    p {
+        line-height: 150%;
+    }
+
+    /*GALLERY/IMAGES*/
+    #gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .img {
-        width: 250px;
-        height: auto;
+        transition: transform .5s;
+        height: 15em;
+        width: auto;
+    }
+
+    .img:hover {
+        transform: scale(1.5);
+    }
+
+    figcaption {
+        font-size: 8px;
     }
 </style>
 
 <body>
-    <h1>What is "surrealism"?</h1>
-    <div id="intro">
-        <img src="images/pipe.jpg" class="banner">
-        <p class="summary">With a goal defined as "[resolving] the previously contradictory conditions of dream and
-            reality into an
-            absolute reality, a super-reality, or surreality", surrealism is an art and cultural movement that uses the
-            subconscious mind to express itself. Much of the art in this movement is largely non-sequitur and often
-            unnerving or fantastical.</p>
+    <!--NAVIGATION BAR-->
+    <div id="nav">
+        <ul><a href="#article" class="link">Home</a></ul>
+        <ul><a href="#history" class="link">History</a></ul>
+        <ul><a href="#gallery" class="link">Gallery</a></ul>
     </div>
-    <div id="gallery">
-        <img src="images/memory.jpg" class="img" alt="Salvador Dali - The Persistence of Memory">
-        <img src="images/sonofman.jpg" class="img" alt="Rene Magritte - Son of Man">
-        <img src="images/loss.jpg" class="img" alt="Zdzislaw Beksinksi - Untitled 'Loss'">
-        <img src="images/deer.jpg" class="img" alt="Frida Kahlo - The Wounded Deer">
-    </div>
+
+    <!--MAIN BODY-->
+    <article id="article">
+        <!--OPENER-->
+        <div class="intro">
+            <h1>What Is "Surrealism"?</h1>
+            <p class="summary">With a goal defined as "[resolving] the previously contradictory conditions of dream and
+                reality into an absolute reality, a super-reality, or surreality", surrealism is an art and cultural
+                movement that uses the
+                subconscious mind to express itself. Much of the art in this movement is largely non-sequitur and often
+                unnerving or fantastical.</p>
+        </div>
+        <br>
+        <div id="history">
+            <h2>History</h2>
+            <p>
+                Originating in the early 20th century, surrealism was founded by French poet Andre Breton. The movement
+                sought to "revolutionize the human experience", attempting to draw on the unconscious dream for
+                inpsiration and exploration. This movement rose in the fall of the Dadaist movement, which was one of
+                many art and cultural movements at the time that queried what exactly art was, and what was meant to be
+                art. The surrealist movement pushed human creativity and thought, rivaling only cubism in it's
+                ambitions.
+            </p>
+        </div>
+
+        <!--GALLERY-->
+        <h2>Gallery</h2>
+        <div id="gallery">
+            <figure>
+                <figcaption><em>Salvador Dali - The Persistence of Memory</em></figcaption>
+                <a href="images/memory.jpg"><img src="images/memory.jpg" class="img"
+                        alt="Salvador Dali - The Persistence of Memory"></a>
+            </figure>
+            <figure>
+                <figcaption><em>Rene Magritte - Son of Man</em></figcaption>
+                <a href="images/sonofman.jpg"><img src="images/sonofman.jpg" class="img"
+                        alt="Rene Magritte - Son of Man"></a>
+            </figure>
+            <figure>
+
+                <figcaption><em>Zdzislaw Beksinksi - Untitled 'Loss'</em></figcaption>
+                <a href="loss.jpg">
+                    <img src="images/loss.jpg" class="img" alt="Zdzislaw Beksinksi - Untitled 'Loss'">
+                </a>
+            </figure>
+            <figure>
+                <figcaption><em>Frida Kahlo - The Wounded Deer</em></figcaption>
+                <img src="images/deer.jpg" class="img" alt="Frida Kahlo - The Wounded Deer">
+            </figure>
+
+        </div>
+    </article>
 </body>
 
 </html>
